@@ -6,7 +6,12 @@ const propTypes = {
 }
 
 const FeaturedImage = ({ image }) => (
-  <img src={image.sourceUrl} srcSet={image.srcSet} alt={image.altText} />
+	<img
+		className="object-cover h-64 w-full rounded shadow-md"
+		src={image.sourceUrl}
+		srcSet={image.srcSet}
+		alt={image.altText}
+	/>
 )
 
 FeaturedImage.propTypes = propTypes

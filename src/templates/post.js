@@ -1,14 +1,26 @@
 import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/Layout";
 
-const Post = props => {
- return (<div>Post</div>)
-}
+const Post = ({ data }) => (
+	<Layout>
+		<article>
+			<header>
+				<h1
+					className="leading-tight text-black-900 mb-4"
+					dangerouslySetInnerHTML={{ __html: decodeURI(data.wpgraphql.post.title)}}
+				/>
+			</header>
+
+			<div dangerouslySetInnerHTML={{ __html: decodeURI(data.wpgraphql.post.content)}} />
+		</article>
+	</Layout>
+)
 
 export default Post
 
 export const pageQuery = graphql`
-  query GET_POST($id: ID!) {
+  query GetPost($id: ID!) {
     wpgraphql {
       post(id: $id) {
         title

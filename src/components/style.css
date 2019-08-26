@@ -1,29 +1,21 @@
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-iframe {
-    max-width: 100%;
-}
-
-* {
-    word-break: break-word;
-}
-
 @tailwind base;
 
 h1 {
-    @apply text-2xl;
+	@apply text-3xl;
 }
 h2 {
-    @apply text-xl;
+	@apply text-2xl;
 }
 h3 {
-    @apply text-lg;
+	@apply text-xl;
 }
 a {
-    @apply text-blue-600 underline;
+  @apply text-blue-600;
+}
+
+body {
+	@apply text-gray-900;
+	background: #fafafa;
 }
 
 @tailwind components;
